@@ -1,0 +1,158 @@
+{
+  "main": {
+    "id": "0233e3184ed4751d",
+    "type": "split",
+    "children": [
+      {
+        "id": "da5aeb00ca684910",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "2502ee0814dbb7c0",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Instalar o dotnet.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "c146aa32c6ae39ac",
+    "type": "split",
+    "children": [
+      {
+        "id": "531cbe4f88ee50c8",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "16167a5233477386",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "80ff6565a8cda49f",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "326100f09b25822e",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "0df04bb1009cf899",
+    "type": "split",
+    "children": [
+      {
+        "id": "76d850c51d1dd1ab",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "4ac9d779e9c8c8fa",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "Instalar o dotnet.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "9539f4435178843c",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "Instalar o dotnet.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "f7c4ac008f2c2d12",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              }
+            }
+          },
+          {
+            "id": "a75663ea4c76e073",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "Instalar o dotnet.md"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Abrir a troca rápida": false,
+      "graph:Abrir visualização em gráfico": false,
+      "canvas:Criar novo canvas": false,
+      "daily-notes:Abrir a nota de hoje": false,
+      "templates:Inserir modelo": false,
+      "command-palette:Abrir paleta de comandos": false
+    }
+  },
+  "active": "2502ee0814dbb7c0",
+  "lastOpenFiles": [
+    "Início.md",
+    "Estrutura do projeto.md",
+    "Padrões do projeto.md",
+    "Criação das camadas.md",
+    "Instalar o dotnet.md",
+    "Objetivo.md"
+  ]
+}
