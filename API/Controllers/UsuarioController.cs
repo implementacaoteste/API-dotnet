@@ -9,7 +9,7 @@ namespace API.Controllers
     public class UsuarioController : ControllerBase
     {
         [HttpGet]
-        public IEnumerable<Usuario> Get()
+        public IEnumerable<Usuario> BuscarTodos()
         {
             return new UsuarioBLL().BuscarTodos();
         }
