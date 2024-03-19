@@ -1,5 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using DAL;
 using Models;
+using System.Collections.Generic;
 
 namespace BLL
 {
@@ -7,12 +8,7 @@ namespace BLL
     {
         public List<Usuario> BuscarTodos()
         {
-            return new List<Usuario>
-            {
-                new Usuario(1, "Erisvaldo", "senha123"),
-                new Usuario(2, "João", "joao123"),
-                // Adicione outros usuários conforme necessário
-            };
+            return new UsuarioDAL().BuscarTodos();
         }
     }
 }
