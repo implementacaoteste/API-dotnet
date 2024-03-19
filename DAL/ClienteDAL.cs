@@ -1,3 +1,4 @@
+using Microsoft.EntityFrameworkCore;
 using Models;
 
 namespace DAL
@@ -5,20 +6,17 @@ namespace DAL
     public class ClienteDAL
     {
         private List<Cliente> clienteList;
+        private readonly AppDbContext _context;
 
-        public ClienteDAL()
+        public ClienteDAL(AppDbContext context)
         {
-            clienteList = new List<Cliente>
-            {
-                new Cliente { Id = 1, Nome = "Cliente 1", Fone = "123456789", Email = "cliente1@example.com" },
-                new Cliente { Id = 2, Nome = "Cliente 2", Fone = "987654321", Email = "cliente2@example.com" },
-                new Cliente { Id = 3, Nome = "Cliente 3", Fone = "456123789", Email = "cliente3@example.com" }
-            };
+            _context = context;
+            clienteList = new List<Cliente>();
         }
 
         public List<Cliente> BuscarTodos()
         {
-            return clienteList;
+            return _context.Clientes.ToList();
         }
 
         public Cliente BuscarPorId(int id)

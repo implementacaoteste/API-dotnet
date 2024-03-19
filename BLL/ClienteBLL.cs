@@ -7,9 +7,9 @@ namespace BLL
     {
         private readonly ClienteDAL clienteDAL;
 
-        public ClienteBLL()
+        public ClienteBLL(AppDbContext context)
         {
-            clienteDAL = new ClienteDAL();
+            clienteDAL = new ClienteDAL(context);
         }
 
         public List<Cliente> BuscarTodos()

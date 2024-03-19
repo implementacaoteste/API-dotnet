@@ -1,6 +1,7 @@
 using BLL;
 using Models;
 using Microsoft.AspNetCore.Mvc;
+using DAL;
 
 namespace API.Controllers
 {
@@ -10,9 +11,9 @@ namespace API.Controllers
     {
         private readonly ClienteBLL clienteBLL;
 
-        public ClienteController()
+        public ClienteController(AppDbContext context)
         {
-            clienteBLL = new ClienteBLL();
+            clienteBLL = new ClienteBLL(context);
         }
 
         [HttpGet]
