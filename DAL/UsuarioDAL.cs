@@ -1,5 +1,4 @@
 ﻿using Models;
-using System.Collections.Generic;
 
 namespace DAL
 {
@@ -26,7 +25,12 @@ namespace DAL
         
         public Usuario BuscarPorId(int _id)
         {
-            return usuarioList.FirstOrDefault(u => u.Id == _id); // Busca um usuário pelo ID
+            var usuario = usuarioList.FirstOrDefault(u => u.Id == _id);
+
+            if (usuario == null)
+                throw new ArgumentException("Usuário não encontrado");
+
+            return usuario;
         }
 
         public void Inserir(Usuario _usuario)
