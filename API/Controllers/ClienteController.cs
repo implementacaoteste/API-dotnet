@@ -11,9 +11,9 @@ namespace API.Controllers
     {
         private readonly ClienteBLL clienteBLL;
 
-        public ClienteController(AppDbContext context)
+        public ClienteController()
         {
-            clienteBLL = new ClienteBLL(context);
+            clienteBLL = new ClienteBLL();
         }
 
         [HttpGet]
