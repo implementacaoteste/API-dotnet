@@ -1,52 +1,51 @@
+using Microsoft.EntityFrameworkCore;
 using Models;
 
 namespace DAL
 {
     public class ProdutoDAL
     {
-        List<Produto> produtoList;
-        public ProdutoDAL()
-        {
-            produtoList = new List<Produto>{
-                new Produto(){Id = 1, Nome = "Arroz", Preco = 54.35, Estoque = 152},
-                new Produto(){Id = 2, Nome = "Feijão", Preco = 22.52, Estoque = 54},
-                new Produto(){Id = 3, Nome = "Farinha", Preco = 15.42, Estoque = 38},
-            };
-        }
         public void Inserir(Produto _produto)
         {
-            produtoList.Add(_produto);
+            using (var context = new AppDbContext())
+            {
+                context.Produto.Add(_produto);
+                context.SaveChanges();
+            }
         }
         public List<Produto> BuscarTodos()
         {
-            return produtoList;
+            using (var context = new AppDbContext())
+            {
+                return context.Produto.ToList();
+            }
         }
-        public Produto BuscarPorId(int _id)
+        public Produto? BuscarPorId(int _id)
         {
-            var produto = produtoList.FirstOrDefault(u => u.Id == _id);
-
-            if(produto == null)
-                throw new Exception("Produto naõ encontrado");
-            
-            return produto;
+            using (var context = new AppDbContext())
+            {
+                return context.Produto.FirstOrDefault(u => u.Id == _id);
+            }
         }
         public void Alterar(Produto _produto)
         {
-            var produto = produtoList.FirstOrDefault(u => u.Id == _produto.Id);
-
-            if(produto != null)
+            using (var context = new AppDbContext())
             {
-                produto.Nome = _produto.Nome;
-                produto.Preco = _produto.Preco;
-                produto.Estoque = _produto.Estoque;
+                context.Entry(_produto).State = EntityState.Modified;
+                context.SaveChanges();
             }
         }
         public void Excluir(int _id)
         {
-            var produto = produtoList.FirstOrDefault(u => u.Id == _id);
-
-            if(produto != null)
-                produtoList.Remove(produto);
+            using (var context = new AppDbContext())
+            {
+                var produto = context.Produto.Find(_id);
+                if (produto != null)
+                {
+                    context.Produto.Remove(produto);
+                    context.SaveChanges();
+                }
+            }
         }
     }
 }
