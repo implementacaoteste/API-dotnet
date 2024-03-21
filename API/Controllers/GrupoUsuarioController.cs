@@ -17,7 +17,7 @@ namespace API.Controllers
             try
             {
                 new GrupoUsuarioBLL().Inserir(_grupoUsuario);
-                return CreatedAtAction(nameof(BuscarPorId), new { id = _grupoUsuario.Id }, _grupoUsuario);
+                return CreatedAtAction(nameof(BuscarPorId), new { _id = _grupoUsuario.Id }, _grupoUsuario);
             }
             catch (Exception ex)
             {
