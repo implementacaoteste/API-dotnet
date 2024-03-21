@@ -13,7 +13,7 @@ namespace BLL
         {
             return new ProdutoDAL().BuscarTodos();
         }
-        public Produto BuscarPorId(int _id)
+        public Produto? BuscarPorId(int _id)
         {
             return new ProdutoDAL().BuscarPorId(_id);
         }
