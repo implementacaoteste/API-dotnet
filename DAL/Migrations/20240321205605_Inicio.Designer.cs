@@ -11,7 +11,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DAL.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20240321201911_Inicio")]
+    [Migration("20240321205605_Inicio")]
     partial class Inicio
     {
         /// <inheritdoc />
@@ -63,6 +63,18 @@ namespace DAL.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("CategoriaProduto");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Descricao = "Novo"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Descricao = "Usado"
+                        });
                 });
 
             modelBuilder.Entity("Models.Cliente", b =>
@@ -293,6 +305,23 @@ namespace DAL.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("GrupoUsuario");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Descricao = "Administrador"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Descricao = "Operador de caixa"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            Descricao = "Estoquista"
+                        });
                 });
 
             modelBuilder.Entity("Models.ItemCompra", b =>

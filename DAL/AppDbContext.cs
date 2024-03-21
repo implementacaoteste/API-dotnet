@@ -34,5 +34,22 @@ namespace DAL
                 optionsBuilder.UseSqlite("Data Source=../DAL/db/app.db");
             }
         }
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
+
+            // Adicionar dados iniciais (seeds) para GrupoUsuario
+            modelBuilder.Entity<GrupoUsuario>().HasData(
+                new GrupoUsuario { Id = 1, Descricao = "Administrador" },
+                new GrupoUsuario { Id = 2, Descricao = "Operador de caixa" },
+                new GrupoUsuario { Id = 3, Descricao = "Estoquista" }
+            );
+
+            // Adicionar dados iniciais (seeds) para CategoriaProduto
+            modelBuilder.Entity<CategoriaProduto>().HasData(
+                new CategoriaProduto { Id = 1, Descricao = "Novo" },
+                new CategoriaProduto { Id = 2, Descricao = "Usado" }
+                );
+        }
     }
 }

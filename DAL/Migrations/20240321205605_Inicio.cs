@@ -3,6 +3,8 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
+#pragma warning disable CA1814 // Prefer jagged arrays over multidimensional
+
 namespace DAL.Migrations
 {
     /// <inheritdoc />
@@ -498,6 +500,25 @@ namespace DAL.Migrations
                         column: x => x.VendaId,
                         principalTable: "Venda",
                         principalColumn: "Id");
+                });
+
+            migrationBuilder.InsertData(
+                table: "CategoriaProduto",
+                columns: new[] { "Id", "Descricao" },
+                values: new object[,]
+                {
+                    { 1, "Novo" },
+                    { 2, "Usado" }
+                });
+
+            migrationBuilder.InsertData(
+                table: "GrupoUsuario",
+                columns: new[] { "Id", "Descricao" },
+                values: new object[,]
+                {
+                    { 1, "Administrador" },
+                    { 2, "Operador de caixa" },
+                    { 3, "Estoquista" }
                 });
 
             migrationBuilder.CreateIndex(
