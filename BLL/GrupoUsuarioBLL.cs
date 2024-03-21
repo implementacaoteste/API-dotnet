@@ -5,7 +5,7 @@ namespace BLL
 {
     public class GrupoUsuarioBLL
     {
-        private void ValidarDados(GrupoUsuario _grupoUsuario, bool _estaInserindo = true)
+        private static void ValidarDados(GrupoUsuario _grupoUsuario, bool _estaInserindo = true)
         {
             if (_grupoUsuario == null)
                 throw new Exception("Informe um usuário.");

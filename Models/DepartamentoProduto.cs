@@ -3,16 +3,12 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Models
 {
-    public class Cliente
+    public class DepartamentoProduto
     {
         public int Id { get; set; }
         [Required]
         [MaxLength(150)]
         [Column(TypeName = "varchar(150)")]
-        public string? Nome { get; set; }
-        [Required]
-        [MaxLength(15)]
-        [Column(TypeName = "varchar(15)")]
-        public string? Fone { get; set; }
+        public string? Descricao { get; set; }
     }
 }

@@ -19,28 +19,20 @@ namespace BLL
             return usuarioDAL.BuscarTodos();
         }
 
-        public Usuario BuscarPorId(int _id)
+        public Usuario? BuscarPorId(int _id)
         {
             return usuarioDAL.BuscarPorId(_id);
         }
 
         public void Inserir(Usuario _usuario)
         {
-            if (_usuario == null)
-            {
-                throw new ArgumentNullException(nameof(_usuario));
-            }
-
+            ArgumentNullException.ThrowIfNull(_usuario);
             usuarioDAL.Inserir(_usuario);
         }
 
         public void Alterar(Usuario _usuario)
         {
-            if (_usuario == null)
-            {
-                throw new ArgumentNullException(nameof(_usuario));
-            }
-
+            ArgumentNullException.ThrowIfNull(_usuario);
             usuarioDAL.Alterar(_usuario);
         }
 
