@@ -18,6 +18,13 @@ namespace API
 
         public void ConfigureServices(IServiceCollection services)
         {
+                        // Adiciona suporte ao controlador
+            services.AddControllers()
+                    .AddJsonOptions(options =>
+                    {
+                        // Define o manipulador de referência para ignorar ciclos
+                        options.JsonSerializerOptions.ReferenceHandler = System.Text.Json.Serialization.ReferenceHandler.IgnoreCycles;
+                    });
             // Adiciona suporte ao controlador
             services.AddControllers();
 
