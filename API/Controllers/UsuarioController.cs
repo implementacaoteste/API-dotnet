@@ -23,7 +23,7 @@ namespace API.Controllers
             return Ok(usuarios);
         }
 
-        [HttpGet("{id}")]
+        [HttpGet("{_id}")]
         public IActionResult BuscarPorId(int _id)
         {
             var usuario = usuarioBLL.BuscarPorId(_id);
@@ -53,7 +53,7 @@ namespace API.Controllers
             }
         }
 
-        [HttpPut("{id}")]
+        [HttpPut("{_id}")]
         public IActionResult Atualizar(int _id, Usuario _usuario)
         {
             if (_usuario == null || _id != _usuario.Id)
@@ -78,7 +78,7 @@ namespace API.Controllers
             }
         }
 
-        [HttpDelete("{id}")]
+        [HttpDelete("{_id}")]
         public IActionResult Excluir(int _id)
         {
             var usuario = usuarioBLL.BuscarPorId(_id);
