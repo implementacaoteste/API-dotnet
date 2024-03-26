@@ -5,46 +5,32 @@ namespace BLL
 {
     public class ClienteBLL
     {
-        private readonly ClienteDAL clienteDAL;
-
-        public ClienteBLL()
+        private void ValidarDados(Cliente _cliente, bool _estaInserindo = true)
         {
-            clienteDAL = new ClienteDAL();
+            if (_cliente == null)
+                throw new Exception("Informe um cliente válido.");
         }
-
+        public void Inserir(Cliente _cliente)
+        {
+            ValidarDados(_cliente);
+            new ClienteDAL().Inserir(_cliente);
+        }
         public List<Cliente> BuscarTodos()
         {
-            return clienteDAL.BuscarTodos();
+            return new ClienteDAL().BuscarTodos();
         }
-
-        public Cliente? BuscarPorId(int id)
+        public Cliente? BuscarPorId(int _id)
         {
-            return clienteDAL.BuscarPorId(id);
+            return new ClienteDAL().BuscarPorId(_id);
         }
-
-        public void Inserir(Cliente cliente)
+        public void Alterar(Cliente _cliente)
         {
-            if (cliente == null)
-            {
-                throw new ArgumentNullException(nameof(cliente));
-            }
-
-            clienteDAL.Inserir(cliente);
+            ValidarDados(_cliente, false);
+            new ClienteDAL().Alterar(_cliente);
         }
-
-        public void Alterar(Cliente cliente)
+        public void Excluir(int _id)
         {
-            if (cliente == null)
-            {
-                throw new ArgumentNullException(nameof(cliente));
-            }
-
-            clienteDAL.Alterar(cliente);
-        }
-
-        public void Excluir(int id)
-        {
-            clienteDAL.Excluir(id);
+            new ClienteDAL().Excluir(_id);
         }
     }
 }

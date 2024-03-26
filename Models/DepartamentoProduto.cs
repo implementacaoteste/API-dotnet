@@ -1,14 +1,8 @@
-﻿using System.ComponentModel.DataAnnotations.Schema;
-using System.ComponentModel.DataAnnotations;
-
-namespace Models
+﻿namespace Models
 {
     public class DepartamentoProduto
     {
-        public int Id { get; set; }
-        [Required]
-        [MaxLength(150)]
-        [Column(TypeName = "varchar(150)")]
+        public int Id { get; set; }        
         public string? Descricao { get; set; }
     }
 }
