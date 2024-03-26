@@ -51,7 +51,7 @@ namespace API
                 app.UseSwaggerUI(c =>
                 {
                     c.SwaggerEndpoint("/swagger/v1/swagger.json", "API V1");
-                    c.RoutePrefix = string.Empty; // Define a raiz do Swagger UI para a raiz da aplicação
+                    //c.RoutePrefix = string.Empty; // Define a raiz do Swagger UI para a raiz da aplicação
                 });
             }
             else
@@ -59,6 +59,9 @@ namespace API
                 // Redireciona para HTTPS em ambientes de produção
                 app.UseHttpsRedirection();
             }
+
+            app.UseDefaultFiles();
+            app.UseStaticFiles();
 
             // Habilita roteamento
             app.UseRouting();
@@ -71,6 +74,8 @@ namespace API
             {
                 // Mapeia os endpoints dos controladores
                 endpoints.MapControllers();
+                // Configura o endpoint padrão para servir o arquivo index.html
+                endpoints.MapFallbackToFile("index.html");
             });
         }
     }
