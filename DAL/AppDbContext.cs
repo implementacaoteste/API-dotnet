@@ -37,6 +37,25 @@ namespace DAL
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
+            // Adicionar dados iniciais (seeds) para Usuario
+            modelBuilder.Entity<Usuario>().HasData(
+                new Usuario
+                {
+                    Id = 1,
+                    Nome = "Administrador",
+                    NomeUsuario = "admin",
+                    Senha = "123456",
+                    Ativo = true
+                },
+                new Usuario
+                {
+                    Id = 2,
+                    Nome = "Vendedor",
+                    NomeUsuario = "vendedor",
+                    Senha = "123456",
+                    Ativo = true
+                }
+            );
 
             // Adicionar dados iniciais (seeds) para GrupoUsuario
             modelBuilder.Entity<GrupoUsuario>().HasData(

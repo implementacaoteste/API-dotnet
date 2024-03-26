@@ -521,6 +521,15 @@ namespace DAL.Migrations
                     { 3, "Estoquista" }
                 });
 
+            migrationBuilder.InsertData(
+                table: "Usuario",
+                columns: new[] { "Id", "Ativo", "Nome", "NomeUsuario", "Senha" },
+                values: new object[,]
+                {
+                    { 1, true, "Administrador", "admin", "123456" },
+                    { 2, true, "Vendedor", "vendedor", "123456" }
+                });
+
             migrationBuilder.CreateIndex(
                 name: "IX_Compra_FornecedorId",
                 table: "Compra",

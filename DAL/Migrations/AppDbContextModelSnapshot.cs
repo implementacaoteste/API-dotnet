@@ -560,6 +560,24 @@ namespace DAL.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Usuario");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Ativo = true,
+                            Nome = "Administrador",
+                            NomeUsuario = "admin",
+                            Senha = "123456"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Ativo = true,
+                            Nome = "Vendedor",
+                            NomeUsuario = "vendedor",
+                            Senha = "123456"
+                        });
                 });
 
             modelBuilder.Entity("Models.Venda", b =>
