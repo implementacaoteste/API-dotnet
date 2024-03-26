@@ -1,6 +1,4 @@
-﻿using System.Security;
-
-namespace Models
+﻿namespace Models
 {
     public class GrupoUsuario
     {
