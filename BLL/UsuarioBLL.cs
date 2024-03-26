@@ -26,7 +26,7 @@ namespace BLL
 
         public void Inserir(Usuario _usuario)
         {
-            ArgumentNullException.ThrowIfNull(_usuario);
+            ArgumentNullException.ThrowIfNull(_usuario, "O arqumento 'usuário' não pode ser nulo");
             usuarioDAL.Inserir(_usuario);
         }
 
