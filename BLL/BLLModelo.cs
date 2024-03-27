@@ -12,8 +12,9 @@ namespace BLL
                 throw new ArgumentNullException(nameof(_t), "A entidade não pode ser nula.");
         }
 
+#warning ignore CS8618
         protected U DataLayer { get; set; }
-
+#warning restore CS8618
         public virtual void Inserir(T _t)
         {
             ValidarDados(_t);

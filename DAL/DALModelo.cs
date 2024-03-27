@@ -59,14 +59,13 @@ namespace DAL
                 context.Add(_t);
             else
                 context.Update(_t);
+            
+            context.SaveChanges();
         }
         public void Dispose()
         {
             if (inicio)
-            {
-                context.SaveChanges();
                 context.Dispose();
-            }
         }
     }
 }

@@ -1,10 +1,10 @@
 namespace Infra
 {
-    public class GravarLog
+    public static class Log
     {
-        public string Log(string _texto)
+        public static void GravarLog(string _texto)
         {
-
+            System.Console.WriteLine($"{DateTime.Now}: {_texto}");
         }
     }
 }

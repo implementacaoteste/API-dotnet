@@ -1,5 +1,8 @@
 using DAL;
+using Microsoft.EntityFrameworkCore.Infrastructure.Internal;
+using Microsoft.Extensions.Logging;
 using Models;
+using Infra;
 
 namespace BLL
 {
@@ -7,8 +10,8 @@ namespace BLL
     {
         private void ValidarDados(CategoriaProduto _categoriaProduto, bool _estaInserindo = true)
         {
-            if (_categoriaProduto == null)
-                throw new Exception("Informe uma categoria de produto válida.");
+            if (!_estaInserindo && _categoriaProduto.Id <= 0)
+                throw new Exception("O id tem que ser maior que 0 (zero)");
         }
         public void Inserir(CategoriaProduto _categoriaProduto)
         {

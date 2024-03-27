@@ -1,14 +1,14 @@
 namespace Infra
 {
-    public class Criptografia
+    public static class Criptografia
     {
-        public string Criptografar(string _texto)
+        public static string Criptografar(string _texto)
         {
-
+            return _texto;
         }
-        public string Descriptografar(string _texto)
+        public static string Descriptografar(string _texto)
         {
-
+            return _texto;
         }
     }
 }
