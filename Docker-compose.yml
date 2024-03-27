@@ -1,0 +1,6 @@
+version: '3'
+services:
+  api-dotnet:
+    image: imagem-api-dotnet
+    volumes:
+      - /home/erisvaldo/git/ImplementacaoTeste/API-dotnet:/app
